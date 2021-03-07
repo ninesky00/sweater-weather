@@ -8,7 +8,6 @@ class WeatherFacade
     def weather(params)
       parsed = OpenWeatherService.forecast(lat_lng(params))
       forecast = Forecast.new(parsed)
-      binding.pry
     end
   end
 end
