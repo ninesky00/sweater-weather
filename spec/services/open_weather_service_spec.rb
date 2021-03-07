@@ -25,7 +25,7 @@ describe OpenWeatherService do
       expect(parsed[:current]).to have_key(:visibility)
       expect(parsed[:current][:weather].first).to have_key(:description)
       expect(parsed[:current][:weather].first).to have_key(:icon)
-      
+
       expect(parsed[:hourly].count).to eq(48)
       parsed[:hourly].each do |hourly|
         expect(hourly).to have_key(:dt)
@@ -45,9 +45,6 @@ describe OpenWeatherService do
         expect(daily[:weather].first).to have_key(:description)
         expect(daily[:weather].first).to have_key(:icon)
       end
-      # binding.pry
-
-      # DateTime.strptime("1615057200", '%s')
     end
   end
 end
