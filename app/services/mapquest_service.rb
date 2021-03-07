@@ -5,14 +5,10 @@ class MapquestService
         req.params[:location] = params[:location]
         req.params[:key] = ENV['MAP_QUEST_KEY']
       end
-      parse(response)
+      JSON.parse(response.body, symbolize_names: true)
     end
 
     private 
-
-    def parse(data)
-      JSON.parse(data.body, symbolize_names: true)
-    end
 
     def connection
       Faraday.new('https://www.mapquestapi.com/')
