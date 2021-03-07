@@ -1,8 +1,8 @@
 class MapquestService
   class << self
-    def lat_lng(params)
+    def lat_lng(location)
       response = connection.get('/geocoding/v1/address') do |req|
-        req.params[:location] = params[:location]
+        req.params[:location] = location
         req.params[:key] = ENV['MAP_QUEST_KEY']
       end
       JSON.parse(response.body, symbolize_names: true)

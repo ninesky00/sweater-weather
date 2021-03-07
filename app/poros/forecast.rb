@@ -30,7 +30,7 @@ class Forecast
 
   def format_hourly_weather(data)
     data[:hourly].first(8).map do |hourly|
-      hourly_weather = {time: DateTime.strptime("#{hourly[:dt]}", '%s'),
+      hourly_weather = {time: Time.at(hourly[:dt]),
                         temp: hourly[:temp].to_f, 
                         conditions: hourly[:weather].first[:description],
                         icon: hourly[:weather].first[:icon]}
@@ -41,7 +41,7 @@ class Forecast
     time_keys = %i(dt sunrise sunset)
     keys = time.slice(*time_keys)
     keys.each do |key, val|
-      keys[key] = DateTime.strptime("#{val}", '%s')
+      keys[key] = Time.at(val)
     end
   end
 end
