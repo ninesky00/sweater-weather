@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_KEY>&q=pueblo,%20co&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Mon, 08 Mar 2021 17:30:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=pueblo%2c+co&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-74.845,"lat":7.3289},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"stations","main":{"temp":81.99,"feels_like":92.28,"temp_min":81.99,"temp_max":81.99,"pressure":1010,"humidity":83,"sea_level":1010,"grnd_level":985},"visibility":10000,"wind":{"speed":1.48,"deg":352},"rain":{"1h":0.205},"clouds":{"all":100},"dt":1615224620,"sys":{"country":"CO","sunrise":1615201758,"sunset":1615245068},"timezone":-18000,"id":3665566,"name":"Pueblo","cod":200}'
+  recorded_at: Mon, 08 Mar 2021 17:30:20 GMT
+recorded_with: VCR 6.0.0

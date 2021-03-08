@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=pueblo,%20co&open_at=1615212000&term=hamburgers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Bearer EsR66FDz3PlKq6mjSuEBzMpdofOQfIfLa9ih6mGEq97oo6QKvER6m9_9MT2ZIAp1j62s0eZ6m4ZTQ-Ge6ql00Ea__Fh_ZZEVrrXC2sKZwDaPh-dsuJbQ6mT1O0tFYHYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - d4194d0d956659f3
+      Ratelimit-Remaining:
+      - '4990'
+      Ratelimit-Dailylimit:
+      - '5000'
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-03-09T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--useast1-6d766dd6fd-f5mwn; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-65-185-166-useast1bprod
+      X-Extlb:
+      - 10-65-185-166-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 08 Mar 2021 18:04:45 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-iah17279-IAH
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "vH1oT1uDl0Ch3wyroJuNbg", "alias": "mozos-great-american-heroes-pueblo",
+        "name": "Mozo''s Great American Heroes", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/AlCHi5L9Inqy6y06lejSZQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/mozos-great-american-heroes-pueblo?adjust_creative=JqW8VbQJaKVPgXXwqmNOiQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=JqW8VbQJaKVPgXXwqmNOiQ",
+        "review_count": 11, "categories": [{"alias": "tradamerican", "title": "American
+        (Traditional)"}], "rating": 4.0, "coordinates": {"latitude": 38.2366307, "longitude":
+        -104.6250101}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        {"address1": "1904 Lake Ave", "address2": "", "address3": "", "city": "Pueblo",
+        "zip_code": "81004", "country": "US", "state": "CO", "display_address": ["1904
+        Lake Ave", "Pueblo, CO 81004"]}, "phone": "+17195667792", "display_phone":
+        "(719) 566-7792", "distance": 5864.890545053168}], "total": 33, "region":
+        {"center": {"longitude": -104.5733642578125, "latitude": 38.27035217485165}}}'
+  recorded_at: Mon, 08 Mar 2021 18:04:45 GMT
+recorded_with: VCR 6.0.0

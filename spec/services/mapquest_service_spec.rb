@@ -19,7 +19,7 @@ describe MapquestService do
       parsed = MapquestService.directions(start, to)
 
       expect(parsed).to have_key(:route)
-      expect(parsed[:route]).to have_key(:formattedTime)
+      expect(parsed[:route]).to have_key(:realTime)
     end
   end
 end
