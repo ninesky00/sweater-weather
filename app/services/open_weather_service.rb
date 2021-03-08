@@ -11,6 +11,14 @@ class OpenWeatherService
       JSON.parse(response.body, symbolize_names: true)
     end
 
+    def current(destination)
+      response = connection.get('/data/2.5/weather') do |req|
+        req.params[:q] = destination
+        req.params[:units] = 'imperial'
+        req.params[:appid] = ENV['OPEN_WEATHER_KEY']
+      end
+      JSON.parse(response.body, symbolize_names: true)
+    end
 
     private 
 

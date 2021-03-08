@@ -47,4 +47,15 @@ describe OpenWeatherService do
       end
     end
   end
+
+  describe "current", :vcr do 
+    it "retrieves current forecast at location" do 
+      destination = 'pueblo, co'
+      parsed = OpenWeatherService.current(destination)
+
+      expect(parsed).to have_key(:weather)
+      expect(parsed).to have_key(:main)
+      expect(parsed[:main]).to have_key(:temp)
+    end
+  end
 end
