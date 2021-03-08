@@ -4,7 +4,6 @@ describe "forecast controller" do
   describe "index" do
     describe "happy path", :vcr do 
       it 'renders a json response with weather forecast given location params' do 
-        params = {location: 'denver, CO'}
         get '/api/v1/forecast?location=denver,co'
 
         expect(response.status).to eq(200)
