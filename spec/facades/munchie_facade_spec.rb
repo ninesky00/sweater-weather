@@ -20,7 +20,7 @@ describe MunchieFacade do
         destination = 'pueblo, co'
         travel_time = MunchieFacade.travel_time(start, destination)
 
-        expect(travel_time).to be_a(String)
+        expect(travel_time).to be_a(Numeric)
       end
     end
   end
@@ -40,7 +40,9 @@ describe MunchieFacade do
   describe "make_munchies", :vcr do 
     it "creates munchie poro based on params" do 
       params = {start: 'denver, co', destination: 'pueblo, co', food: 'hamburgers'}
-      
+      munchie = MunchieFacade.make_munchies(params)
+
+      expect(munchie).to be_a(Munchie)
     end
   end
 end

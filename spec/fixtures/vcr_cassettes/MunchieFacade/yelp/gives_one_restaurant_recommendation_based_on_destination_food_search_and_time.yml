@@ -25,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/json
       X-Zipkin-Id:
-      - d4194d0d956659f3
+      - d5344730cc6f1739
       Ratelimit-Remaining:
-      - '4990'
+      - '4984'
       Ratelimit-Dailylimit:
       - '5000'
       Server:
@@ -35,23 +35,23 @@ http_interactions:
       Ratelimit-Resettime:
       - '2021-03-09T00:00:00+00:00'
       X-Routing-Service:
-      - routing-main--useast1-6d766dd6fd-f5mwn; site=public_api_v3
+      - routing-main--useast1-6d766dd6fd-7d96t; site=public_api_v3
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-65-185-166-useast1bprod
+      - 10-65-79-0-useast1aprod
       X-Extlb:
-      - 10-65-185-166-useast1bprod
+      - 10-65-79-0-useast1aprod
       Cache-Control:
       - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 08 Mar 2021 18:04:45 GMT
+      - Mon, 08 Mar 2021 18:55:12 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iah17279-IAH
+      - cache-iah17275-IAH
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -67,11 +67,11 @@ http_interactions:
         "is_closed": false, "url": "https://www.yelp.com/biz/mozos-great-american-heroes-pueblo?adjust_creative=JqW8VbQJaKVPgXXwqmNOiQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=JqW8VbQJaKVPgXXwqmNOiQ",
         "review_count": 11, "categories": [{"alias": "tradamerican", "title": "American
         (Traditional)"}], "rating": 4.0, "coordinates": {"latitude": 38.2366307, "longitude":
-        -104.6250101}, "transactions": ["pickup", "delivery"], "price": "$", "location":
+        -104.6250101}, "transactions": ["delivery", "pickup"], "price": "$", "location":
         {"address1": "1904 Lake Ave", "address2": "", "address3": "", "city": "Pueblo",
         "zip_code": "81004", "country": "US", "state": "CO", "display_address": ["1904
         Lake Ave", "Pueblo, CO 81004"]}, "phone": "+17195667792", "display_phone":
         "(719) 566-7792", "distance": 5864.890545053168}], "total": 33, "region":
         {"center": {"longitude": -104.5733642578125, "latitude": 38.27035217485165}}}'
-  recorded_at: Mon, 08 Mar 2021 18:04:45 GMT
+  recorded_at: Mon, 08 Mar 2021 18:55:12 GMT
 recorded_with: VCR 6.0.0
