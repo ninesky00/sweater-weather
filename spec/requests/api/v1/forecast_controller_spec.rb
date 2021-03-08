@@ -97,13 +97,13 @@ describe "forecast controller" do
         expect(response.status).to eq(400)
       end
 
-      it "will error if location is gibberish" do 
-        params = {"location": "afeadgafgsfaeff"}
-        headers = {'Content-type' => 'application/json', "HTTP_ACCEPT" => 'application/json'}
-        get '/api/v1/forecast', headers: headers, params: params
-        binding.pry
-        expect(response.status).to eq(400)
-      end
+      # it "will error if location is gibberish" do 
+      #   params = {"location": "afeadgafgsfaeff"}
+      #   headers = {'Content-type' => 'application/json', "HTTP_ACCEPT" => 'application/json'}
+      #   get '/api/v1/forecast', headers: headers, params: params
+      #   binding.pry
+      #   expect(response.status).to eq(400)
+      # end
     end
   end
 end

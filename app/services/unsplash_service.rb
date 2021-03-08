@@ -2,7 +2,6 @@ class UnsplashService
   class << self
     def search_image(query)
       response = connection.get('/search/photos') do |req|
-        # binding.pry
         req.headers['Accept-Version'] = 'v1'
         req.params[:query] = query
         req.params[:per_page] = 1
