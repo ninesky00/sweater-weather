@@ -54,6 +54,7 @@ describe OpenWeatherService do
       parsed = OpenWeatherService.current(destination)
 
       expect(parsed).to have_key(:weather)
+      expect(parsed[:weather]).to have_key(:description)
       expect(parsed).to have_key(:main)
       expect(parsed[:main]).to have_key(:temp)
     end
