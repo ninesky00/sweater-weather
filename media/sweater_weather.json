@@ -1,0 +1,189 @@
+Road Trip
+
+{
+    "data": {
+        "id": null,
+        "type": "road_trip",
+        "attributes": {
+            "start_city": "Denver, CO",
+            "end_city": "Pueblo, CO",
+            "travel_time": 6713,
+            "weather_at_eta": {
+                "temp": 47.8,
+                "conditions": "scattered clouds"
+            }
+        }
+    }
+}
+
+User registration
+
+{
+    "status": "created",
+    "body": {
+        "data": {
+            "id": "129",
+            "type": "user",
+            "attributes": {
+                "email": "test1@gmail.com",
+                "auth_token": "5c0db1b400c236895656eebc738cf48f8b873435"
+            }
+        }
+    }
+}
+
+Session login
+
+{
+    "status": 200,
+    "logged_in": true,
+    "body": {
+        "data": {
+            "id": "129",
+            "type": "user",
+            "attributes": {
+                "email": "test1@gmail.com",
+                "auth_token": "5c0db1b400c236895656eebc738cf48f8b873435"
+            }
+        }
+    }
+}
+
+backgrounds endpoint
+
+{
+    "data": {
+        "id": null,
+        "type": "image",
+        "attributes": {
+            "image": {
+                "location": "denver",
+                "image_url": "https://images.unsplash.com/photo-1507070989769-45210775a437?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTMwNjF8MHwxfHNlYXJjaHwxfHxkZW52ZXIsJTIwY29sb3JhZG98ZW58MHx8fHwxNjE1MzEyNDIz&ixlib=rb-1.2.1&q=80&w=1080",
+                "description": "high-rise brown concrete building",
+                "credit": {
+                    "author": "Henry Desro",
+                    "username": "xdesro"
+                }
+            }
+        }
+    }
+}
+
+forecast endpoint
+{
+    "data": {
+        "id": null,
+        "type": "forecast",
+        "attributes": {
+            "current_weather": {
+                "dt": "2021-03-10T02:26:26.000-06:00",
+                "sunrise": "2021-03-10T07:18:55.000-06:00",
+                "sunset": "2021-03-10T19:01:32.000-06:00",
+                "temp": 40.59,
+                "feels_like": 33.06,
+                "humidity": 55,
+                "uvi": 0,
+                "visibility": 10000,
+                "conditions": "overcast clouds",
+                "icon": "04n"
+            },
+            "daily_weather": [
+                {
+                    "dt": "2021-03-10T13:00:00.000-06:00",
+                    "sunrise": "2021-03-10T07:18:55.000-06:00",
+                    "sunset": "2021-03-10T19:01:32.000-06:00",
+                    "max_temp": 51.33,
+                    "min_temp": 35.47,
+                    "conditions": "rain and snow",
+                    "icon": "13d"
+                },
+                {
+                    "dt": "2021-03-11T13:00:00.000-06:00",
+                    "sunrise": "2021-03-11T07:17:20.000-06:00",
+                    "sunset": "2021-03-11T19:02:34.000-06:00",
+                    "max_temp": 46.81,
+                    "min_temp": 33.28,
+                    "conditions": "light snow",
+                    "icon": "13d"
+                },
+                {
+                    "dt": "2021-03-12T13:00:00.000-06:00",
+                    "sunrise": "2021-03-12T07:15:45.000-06:00",
+                    "sunset": "2021-03-12T19:03:36.000-06:00",
+                    "max_temp": 44.04,
+                    "min_temp": 33.22,
+                    "conditions": "snow",
+                    "icon": "13d"
+                },
+                {
+                    "dt": "2021-03-13T13:00:00.000-06:00",
+                    "sunrise": "2021-03-13T07:14:09.000-06:00",
+                    "sunset": "2021-03-13T19:04:38.000-06:00",
+                    "max_temp": 32.76,
+                    "min_temp": 26.6,
+                    "conditions": "heavy snow",
+                    "icon": "13d"
+                },
+                {
+                    "dt": "2021-03-14T14:00:00.000-05:00",
+                    "sunrise": "2021-03-14T08:12:33.000-05:00",
+                    "sunset": "2021-03-14T20:05:39.000-05:00",
+                    "max_temp": 30.22,
+                    "min_temp": 25.29,
+                    "conditions": "snow",
+                    "icon": "13d"
+                }
+            ],
+            "hourly_weather": [
+                {
+                    "time": "2021-03-10T02:00:00.000-06:00",
+                    "temp": 40.59,
+                    "conditions": "moderate rain",
+                    "icon": "10n"
+                },
+                {
+                    "time": "2021-03-10T03:00:00.000-06:00",
+                    "temp": 40.96,
+                    "conditions": "overcast clouds",
+                    "icon": "04n"
+                },
+                {
+                    "time": "2021-03-10T04:00:00.000-06:00",
+                    "temp": 40.5,
+                    "conditions": "light rain",
+                    "icon": "10n"
+                },
+                {
+                    "time": "2021-03-10T05:00:00.000-06:00",
+                    "temp": 40.1,
+                    "conditions": "light rain",
+                    "icon": "10n"
+                },
+                {
+                    "time": "2021-03-10T06:00:00.000-06:00",
+                    "temp": 40.37,
+                    "conditions": "light rain",
+                    "icon": "10n"
+                },
+                {
+                    "time": "2021-03-10T07:00:00.000-06:00",
+                    "temp": 40.03,
+                    "conditions": "light rain",
+                    "icon": "10n"
+                },
+                {
+                    "time": "2021-03-10T08:00:00.000-06:00",
+                    "temp": 39.6,
+                    "conditions": "light rain",
+                    "icon": "10d"
+                },
+                {
+                    "time": "2021-03-10T09:00:00.000-06:00",
+                    "temp": 40.51,
+                    "conditions": "snow",
+                    "icon": "13d"
+                }
+            ]
+        }
+    }
+}
