@@ -43,7 +43,7 @@ describe RoadtripFacade do
       to = "london, uk"
 
       parsed = RoadtripFacade.arrival_forecast(from, to)
-      binding.pry
+      expect(parsed).to eq("Invalid location")
     end
   end
 end

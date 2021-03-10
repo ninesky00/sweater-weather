@@ -5,12 +5,17 @@ class RoadtripFacade
     include WeatherFormat
     def travel_time(from, to)
       parsed = MapquestService.directions(from, to)
-      duration = parsed[:route][:realTime] < 10000000 ? parsed[:route][:realTime] : parsed[:route][:formattedTime]
-      duration.class == Integer ? duration : timify(duration)
+      if parsed[:info][:statuscode] == 0
+        duration = parsed[:route][:realTime] < 10000000 ? parsed[:route][:realTime] : parsed[:route][:formattedTime]
+        duration.class == Integer ? duration : timify(duration)
+      else
+        "Invalid location"
+      end
     end
 
     def arrival_forecast(from, to)
       duration = travel_time(from, to)
+      return duration if duration == "Invalid location"
       arrival_time = Time.now + duration
       parsed = WeatherFacade.weather(to)
       if duration < 172800
