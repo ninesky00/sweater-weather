@@ -11,10 +11,4 @@ class Api::V1::SessionsController < ApplicationController
       render json: { status: 401, message: 'bad credentials'}, status: 401
     end
   end
-
-  private 
-
-  def user_params
-    params.require(:user).permit(:email, :password)
-  end
 end

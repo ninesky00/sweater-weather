@@ -6,7 +6,11 @@ class WeatherFacade
     end
 
     def weather(params)
-      Forecast.new(OpenWeatherService.forecast(lat_lng(params)))
+      OpenWeatherService.forecast(lat_lng(params))
+    end
+
+    def make_forecast(params)
+      Forecast.new(weather(params))
     end
   end
 end

@@ -31,7 +31,7 @@ describe "users controller" do
   # describe "sad happy" do
   #   it "dot not create user when already created" do 
   #     user_params = {email: 'person@woohoo.com', password: 'abc123', 
-  #                   password_confirmation: 'abc123'}
+  #                   password_confirmation: '321cba'}
   #     headers = { 'Content-Type' => 'application/json'}
 
   #     post '/api/v1/users', headers: headers, params: JSON.generate({user: user_params})

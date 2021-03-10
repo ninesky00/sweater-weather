@@ -11,4 +11,16 @@ describe MapquestService do
       expect(parsed_location).to have_key(:latLng)
     end
   end
+
+  describe "directions" do 
+    it "retrieve driving directions from city a to city b", :vcr do 
+      from = 'denver, co'
+      to = 'arvada, co'
+      parsed = MapquestService.directions(from, to)
+      expect(parsed).to have_key(:route)
+      expect(parsed[:route]).to have_key(:distance)
+      expect(parsed[:route]).to have_key(:formattedTime)
+      expect(parsed[:route]).to have_key(:realTime)
+    end
+  end
 end

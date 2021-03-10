@@ -8,6 +8,15 @@ class MapquestService
       JSON.parse(response.body, symbolize_names: true)
     end
 
+    def directions(from, to)
+      response = connection.get('/directions/v2/route') do |req|
+        req.params[:from] = from
+        req.params[:to] = to
+        req.params[:key] = ENV['MAP_QUEST_KEY']
+      end
+      JSON.parse(response.body, symbolize_names: true)
+    end
+
     private 
 
     def connection

@@ -13,10 +13,10 @@ describe WeatherFacade do
     end
   end
 
-  describe 'weather' do 
-    it 'creates forecast object from open weather forecast', :vcr do 
+  describe 'make_forecast' do 
+    it 'creates forecast object from open weather service', :vcr do 
       location = 'denver, CO'
-      result = WeatherFacade.weather(location)
+      result = WeatherFacade.make_forecast(location)
 
       expect(result).to be_a(Forecast)
       expect(result.current_weather).to be_a(Hash)
