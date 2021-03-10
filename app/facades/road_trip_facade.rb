@@ -1,8 +1,15 @@
 require './lib/weather_format.rb'
 
-class RoadtripFacade
+class RoadTripFacade
   class << self 
     include WeatherFormat
+    def make_road_trip(params)
+      RoadTrip.new(params[:origin], 
+                  params[:destination], 
+                  travel_time(params[:origin], params[:destination]), 
+                  arrival_forecast(params[:origin], params[:destination]))
+    end
+
     def travel_time(from, to)
       parsed = MapquestService.directions(from, to)
       if parsed[:info][:statuscode] == 0

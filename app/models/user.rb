@@ -2,7 +2,6 @@ require 'securerandom'
 
 class User < ApplicationRecord
   has_secure_password
-  # has_secure_token
   before_create :set_access_token
 
   validates :email, presence: true, uniqueness: true
