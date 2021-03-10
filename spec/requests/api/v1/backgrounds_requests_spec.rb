@@ -28,5 +28,12 @@ describe "backgrounds controller" do
         expect(data[:attributes][:image][:credit]).to have_key(:username)
       end
     end
+    
+    describe "sad path" do
+      it "errors if location is not passed" do 
+        get '/api/v1/backgrounds?location='
+        expect(response.status).to eq(400)
+      end
+    end
   end
 end

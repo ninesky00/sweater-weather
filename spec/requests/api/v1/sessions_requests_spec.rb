@@ -26,4 +26,17 @@ describe "sessions controller" do
       expect(parsed[:body][:data][:attributes]).to have_key(:auth_token)
     end
   end
+  describe "sad path" do 
+    it "does not allow user to login with incorrect credentials" do 
+      user = User.create(email: 'test4@gmail.com', password: 'test4', password_confirmation: 'test4')
+      user_params = {email: 'test4@gmail.com', password: 'test2'}
+      headers = { 'Content-Type' => 'application/json'}
+
+      post '/api/v1/sessions', headers: headers, params: JSON.generate({user: user_params})
+
+      expect(response.status).to eq(401)
+      parsed = JSON.parse(response.body, symbolize_names:true)
+      expect(parsed[:message]).to eq('bad credentials')
+    end
+  end
 end

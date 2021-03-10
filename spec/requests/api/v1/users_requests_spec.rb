@@ -28,16 +28,19 @@ describe "users controller" do
     end
   end
 
-  # describe "sad happy" do
-  #   it "dot not create user when already created" do 
-  #     user_params = {email: 'person@woohoo.com', password: 'abc123', 
-  #                   password_confirmation: '321cba'}
-  #     headers = { 'Content-Type' => 'application/json'}
+  describe "sad happy" do
+    #would these sad paths be unnecessary if we use User.create! and user validations?
+    it "dot not create user when already created" do 
+      user_params = {email: 'person@woohoo.com', password: 'abc123', 
+                    password_confirmation: 'abc123'}
+      User.create!(email: 'person@woohoo.com', password: 'abc123', 
+        password_confirmation: 'abc123')
+      headers = { 'Content-Type' => 'application/json'}
 
-  #     post '/api/v1/users', headers: headers, params: JSON.generate({user: user_params})
-
-  #     post '/api/v1/users', headers: headers, params: JSON.generate({user: user_params})
-  #     expect(response.status).to eq(409)
-  #   end
-  # end
+      post '/api/v1/users', headers: headers, params: JSON.generate({user: user_params})
+      expect(response.status).to eq(409)
+      parsed = JSON.parse(response.body, symbolize_names:true)
+      expect(parsed[:message]).to eq({:email=>["has already been taken"]})
+    end
+  end
 end

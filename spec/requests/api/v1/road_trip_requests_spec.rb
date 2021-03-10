@@ -7,6 +7,7 @@ describe "Road Trip requests" do
       params = {"origin": "Denver, CO", "destination": "Pueblo, CO", "api_key": "#{user.auth_token}"}
       headers = { 'Content-Type' => 'application/json'}
       post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+      expect(response.status).to eq(200)
 
       parsed = JSON.parse(response.body, symbolize_names:true)
       expect(parsed).to have_key(:data)
@@ -21,6 +22,34 @@ describe "Road Trip requests" do
       expect(parsed[:data][:attributes]).to have_key(:weather_at_eta)
       expect(parsed[:data][:attributes][:weather_at_eta]).to have_key(:temp)
       expect(parsed[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
+    end
+  end
+
+  describe "sad path" do 
+    it "errors I'm a teapot if key is not passed" do 
+      params = {"origin": "Denver, CO", "destination": "Pueblo, CO", "api_key": ""}
+      headers = { 'Content-Type' => 'application/json'}
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+      
+      expect(response.status).to eq(418)
+    end
+
+    it "errors I'm a teapot if origin is not passed" do 
+      user = User.create!(email: "test5@gmail.com", password: "test5", password_confirmation: "test5")
+      params = {"origin": "", "destination": "Pueblo, CO", "api_key": "#{user.auth_token}"}
+      headers = { 'Content-Type' => 'application/json'}
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+      
+      expect(response.status).to eq(418)
+    end
+
+    it "errors 401 if key is incorrect" do 
+      user = User.create!(email: "test5@gmail.com", password: "test5", password_confirmation: "test5")
+      params = {"origin": "Denver, CO", "destination": "Pueblo, CO", "api_key": "gibberish"}
+      headers = { 'Content-Type' => 'application/json'}
+      post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
+      
+      expect(response.status).to eq(401)
     end
   end
 end

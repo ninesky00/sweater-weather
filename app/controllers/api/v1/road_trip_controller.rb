@@ -8,7 +8,7 @@ class Api::V1::RoadTripController < ApplicationController
   private 
 
   def params_present?
-    render json: {error: 'invalid request'} unless check_params
+    render json: {error: 'invalid request'}, status: 418 unless check_params
   end
 
   def key_present?
